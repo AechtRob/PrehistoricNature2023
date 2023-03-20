@@ -13,7 +13,9 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registries.CONFIGURED_FEATURE, PrehistoricNatureMod.MOD_ID);
 
+    //TODO add configured features for all trees in mod
     public static final ResourceKey<ConfiguredFeature<?, ?>> LEPIDODENDRON_TREE = createKey("lepidodendron_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WALCHIA_TREE = createKey("walchia_tree");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
         return ResourceKey.create(CONFIGURED_FEATURES.getRegistryKey(), new ResourceLocation(PrehistoricNatureMod.MOD_ID, name));

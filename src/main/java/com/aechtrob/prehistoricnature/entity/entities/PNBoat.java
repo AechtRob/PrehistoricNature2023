@@ -1,6 +1,8 @@
 package com.aechtrob.prehistoricnature.entity.entities;
 
 import com.aechtrob.prehistoricnature.block.trees.lepidodendron.*;
+import com.aechtrob.prehistoricnature.block.trees.walchia.BlocksTreeWalchia;
+import com.aechtrob.prehistoricnature.block.trees.walchia.ItemsTreeWalchia;
 import net.minecraft.nbt.*;
 import net.minecraft.network.protocol.*;
 import net.minecraft.network.protocol.game.*;
@@ -35,8 +37,10 @@ public class PNBoat extends Boat {
     public Item getDropItem() {
         return switch (this.getPNBoatType()) {
             case LEPIDODENDRON -> ItemsTreeLepidodendron.LEPIDODENDRON_BOAT_ITEM.get();
+            case WALCHIA -> ItemsTreeWalchia.WALCHIA_BOAT_ITEM.get();
         };
     }
+
 
     public void setPNBoatType(PNBoat.Type boatType) {
         this.getEntityData().set(BOAT_TYPE, boatType.ordinal());
@@ -67,7 +71,12 @@ public class PNBoat extends Boat {
 //TODO add every woodtype thats added to the mod here
     public enum Type {
 
-        LEPIDODENDRON(BlocksTreeLepidodendron.LEPIDODENDRON_PLANKS.get(),BlocksTreeLepidodendron.treeName);
+
+        WALCHIA(BlocksTreeWalchia.WALCHIA_PLANKS.get(), BlocksTreeWalchia.treeName),
+        LEPIDODENDRON(BlocksTreeLepidodendron.LEPIDODENDRON_PLANKS.get(), BlocksTreeLepidodendron.treeName);
+
+
+
 
         private final String name;
         private final Block block;
